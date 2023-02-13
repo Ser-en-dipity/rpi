@@ -1,0 +1,17 @@
+{
+    "editor.formatOnSave": true,
+    "editor.fontLigatures": true,
+    "editor.fontSize": 17,
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontSize": 15,
+    "workbench.colorTheme": "One Dark Pro",
+    "oneDarkPro.italic": true,
+    "oneDarkPro.vivid": true,
+    "csharp.format.enable": true,
+    "omnisharp.defaultLaunchSolution": "${workspaceFolder}/Netum.Scanner.sln",
+    "omnisharp.autoStart": true,
+    "vim.autoindent": true,
+    "vim.camelCaseMotion.enable": true,
+    "vim.easymotion": true,
+
+}

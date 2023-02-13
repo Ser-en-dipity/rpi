@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>dotnet-QrCodeScanner-6C58D3A7-286C-417A-A48F-DC12402D6926</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.17.0" />
+    <PackageReference Include="Grpc" Version="2.37.1" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.37.0" />
+    <PackageReference Include="Grpc.Net.ClientFactory" Version="2.37.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.37.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+
+    <PackageReference Include="Serilog" Version="2.10.0" />
+
+    <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+
+    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+    <PackageReference Include="System.IO.Ports" Version="5.0.1" />
+  </ItemGroup>
+
+   <ItemGroup>
+      <Protobuf Include="../../protos/code_scanner_msg.proto" GrpcServices="None" Link="code_scanner_msg.proto" />
+      <Protobuf Include="../../protos/code_scanner.proto" GrpcServices="Client" Link="code_scanner.proto" />
+  </ItemGroup>
+
+
+</Project>

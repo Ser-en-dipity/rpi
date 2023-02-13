@@ -1,0 +1,69 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-arm64",
+            "command": "/home/pan/dotnet/dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "--configuration=Debug",
+                "--runtime=linux-arm64",
+                "${workspaceFolder}/QrCodeScanner.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "rpi-scp",
+            "command": "/usr/bin/scp",
+            "type": "process",
+            "args": [
+                "-r",
+                "${workspaceFolder}/bin/Debug/net5.0/linux-arm64",
+                "rpi_zhoutao_03_eth:QrCoder"
+            ],
+            "dependsOn": [
+                "build-arm64"
+            ]
+        },
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/QrCodeScanner.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/QrCodeScanner.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/QrCodeScanner.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
