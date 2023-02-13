@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ICNC.IOT;
+option csharp_namespace = "ICNC.IOT";
+
+import "google/protobuf/empty.proto";
+import "code_scanner_msg.proto";
+
+service ScannerMessenger {
+  rpc OnScanMachine(ScannerMessage) returns (google.protobuf.Empty) {}
+  rpc OnScanStaff(ScannerMessage) returns (google.protobuf.Empty) {}
+  rpc OnScanZhaosQrCode(ScannerMessage) returns(google.protobuf.Empty){}
+  rpc OnScanManufactureOrderQrCode(ScannerMessage) returns(google.protobuf.Empty){}
+}

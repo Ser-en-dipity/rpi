@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ICNC.IOT;
+option csharp_namespace = "ICNC.IOT";
+
+message ScannerMessage {
+	string Code = 1;
+};
